@@ -2210,7 +2210,7 @@
 
 
 <h1 id="sample-apps-gallery">Sample Apps Gallery<a class="headerlink" href="#sample-apps-gallery" title="Permanent link">&para;</a></h1>
-<p>Browse, filter, and clone the official <code>@uipath/uipath-typescript</code> sample apps. Each card links to the source and copies a ready-to-run <code>degit</code> command.</p>
+<p>Browse, filter, and clone the <a id="tg-intro-link" target="_blank" rel="noopener">official <code>@uipath/uipath-typescript</code> sample apps</a>. Each card links to the source and copies a ready-to-run <code>degit</code> command.</p>
 <div class="tg" id="tg">
   <div class="tg-controls">
     <div class="tg-toprow">
@@ -2479,7 +2479,9 @@
   function render() { renderTabs(); renderFilters(); renderGrid(); }
   $("tg-search").addEventListener("input", function (e) { state.q = e.target.value.trim().toLowerCase(); renderGrid(); });
   $("tg-clear").addEventListener("click", function () { state.cat = "all"; state.fws.clear(); state.q = ""; $("tg-search").value = ""; render(); $("tg-search").focus(); });
-  $("tg-browse").href = TREE_BASE + "samples";
+  var samplesUrl = TREE_BASE + "samples";
+  $("tg-browse").href = samplesUrl;
+  var introLink = $("tg-intro-link"); if (introLink) introLink.href = samplesUrl;
   render();
 })();
 </script>
